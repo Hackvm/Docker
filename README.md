@@ -28,8 +28,7 @@ This guide will walk you through the process of creating a Docker container for 
 
     This command will create a Docker image tagged as `invoice-generator:latest` based on the `Dockerfile`.
 
-![Docker Build](/home/vivek/Pictures/docker_Build.png)
-
+<img src="/home/vivek/Pictures/docker_Build.png" alt="Docker Build" width="400" />
 ## Step 2: Run the Docker Image
 
 3. **Run the Docker Image**: To run the Docker image, use the following command:
@@ -43,8 +42,7 @@ This guide will walk you through the process of creating a Docker container for 
     - `-p` maps port 9090 on your host to port 3000 in the container.
     - `invoice-generator:latest` is the name and tag of the Docker image to run.
 
-![Docker Run](/home/vivek/Pictures/docker_run.png)
-
+<img src="/home/vivek/Pictures/docker_run.png" alt="Docker Run" width="400" />
     Your invoice generator application is now running in a Docker container and accessible on `http://localhost:9090`.
 
-![Application](/home/vivek/Pictures/React_APp.png)
+<img src="/home/vivek/Pictures/React_APp.png" alt="Docker App" width="400" />
