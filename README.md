@@ -7,19 +7,26 @@ This guide will walk you through the process of creating a Docker container for 
 1. **Create a Dockerfile**: Start by creating a `Dockerfile` in the root directory of your project. The `Dockerfile` is used to define the image's configuration and dependencies.
 
     ```Dockerfile
+	# Use the official Ubuntu base image
 	FROM ubuntu
 
+	# Set environment variables for the GitHub repository and project name
 	ENV links https://github.com/samhoooo/shopping-cart/archive/refs/heads/main.zip
 	ENV name shopping-cart-main
-	RUN apt update -y  && apt upgrade -y && apt install npm unzip -y
 
+	# Update and upgrade packages and install npm and unzip
+	RUN apt update -y && apt upgrade -y && apt install npm unzip -y
+
+	# Add the project source code from the specified GitHub repository
 	ADD $links /home/master.zip
 
+	# Unzip the project source code and navigate to the project directory
 	RUN cd /home && unzip master.zip && cd /home/$name && npm install
 
+	# Set the working directory and start the application
 	CMD cd /home/$name && npm start
+	```
 
-    ```
 2. **Build the Docker Image**: To build the Docker image, open your terminal and navigate to the project directory. Run the following command:
 
     ```bash
